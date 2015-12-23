@@ -25,7 +25,6 @@ var largeFactorial = function(num) {
         }
         carry = 0;
       }
-      console.log(f, tmp, carry, carry*10);
     }
   }
 
