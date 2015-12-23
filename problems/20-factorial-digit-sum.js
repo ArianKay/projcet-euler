@@ -33,6 +33,7 @@ var largeFactorial = function(num) {
 
 // console.log(largeFactorial(100));
 
+var init = new Date().getTime();
 console.log(largeFactorial(100).reduce(function(car, curr) {
   return car + curr;
-}, 0));
+}, 0), (new Date().getTime() - init) / 1000 );
