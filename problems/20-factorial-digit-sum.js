@@ -17,8 +17,12 @@ var largeFactorial = function(num) {
       f[f.length - (1 + j)] = tmp - (carry * 10);
 
       if (carry && j === (f.length - 1)) {
-        j++;
-        f.unshift(carry);
+        while (carry) {
+          var tCarry = Math.floor(carry / 10);
+          j++;
+          f.unshift(carry - (tCarry * 10));
+          carry = tCarry;
+        }
         carry = 0;
       }
       console.log(f, tmp, carry, carry*10);
@@ -27,6 +31,8 @@ var largeFactorial = function(num) {
 
   return f;
 };
+
+// console.log(largeFactorial(100));
 
 console.log(largeFactorial(100).reduce(function(car, curr) {
   return car + curr;
